@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAY ATTENTION CLUB</title>
+    <link rel="stylesheet" href="styles.css?v=12345" />
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="./public/eye.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1 class="title">Each Monday at 12PM (Est)</h1>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+                <div class="carousel-text instagram-text active">Commit to a<br>weekly screen time limit<br>with cash on the line</div>
+                <div class="carousel-text instagram-text">Weekly verdict!<br>Profit goes to weekly activism.<br>Commit again!</div>
+            </div>
+            
+            <!-- Carousel Indicators -->
+            <div class="circles-container">
+                <div class="circle filled carousel-circle active"></div>
+                <div class="circle outline carousel-circle"></div>
+            </div>
+        </div>
+
+        <!-- Main Logo -->
+        <div class="logo-section">
+            <img src="./public/Group 623.svg" alt="PAY ATTENTION CLUB" class="logo-image-large" />
+        </div>
+
+        <!-- App Store Section -->
+        <div class="app-store-container">
+            <img src="./public/available-on-the-app-store 1.svg" alt="Download on the App Store" class="app-store-button" />
+            <div class="join-waitlist">Join waitlist</div>
+        </div>
+
+        <!-- Instagram Section -->
+        <div class="instagram-section">
+            <img src="./public/Group 622.png" alt="Instagram" class="instagram-logo" />
+            <div class="instagram-text">
+                <span class="dont-text">Don't</span> follow us on Instagram <strong>@payattentionclub</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, starting carousel...');
+            const carouselTexts = document.querySelectorAll('.carousel-text');
+            const carouselCircles = document.querySelectorAll('.carousel-circle');
+            
+            if (carouselTexts.length === 0) {
+                console.error('No carousel texts found!');
+                return;
+            }
+            
+            let currentIndex = 0;
+
+            function showNextText() {
+                // Hide current text and circle
+                carouselTexts[currentIndex].classList.remove('active');
+                carouselCircles[currentIndex].classList.remove('active');
+                
+                // Move to next text
+                currentIndex = (currentIndex + 1) % carouselTexts.length;
+                
+                // Show next text and circle
+                carouselTexts[currentIndex].classList.add('active');
+                carouselCircles[currentIndex].classList.add('active');
+            }
+
+            // Start the carousel after a short delay
+            setTimeout(function() {
+                console.log('Starting carousel interval...');
+                setInterval(showNextText, 6000); // Change every 6 seconds
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
