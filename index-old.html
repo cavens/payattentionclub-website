@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAY ATTENTION CLUB - FORCE REFRESH</title>
+    <title>PAY ATTENTION CLUB - EMBEDDED CSS TEST</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -329,11 +329,10 @@
     <div class="video-background">
         <video autoplay muted loop playsinline>
             <source src="./public/eye.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
+        <div class="video-overlay"></div>
     </div>
-    
-    <!-- Video Overlay -->
-    <div class="video-overlay"></div>
 
     <div class="container">
         <!-- Header Section -->
@@ -348,8 +347,8 @@
             
             <!-- Carousel Indicators -->
             <div class="circles-container">
-                <div class="circle carousel-circle filled active"></div>
-                <div class="circle carousel-circle outline"></div>
+                <div class="circle filled carousel-circle active"></div>
+                <div class="circle outline carousel-circle"></div>
             </div>
         </div>
 
@@ -374,33 +373,35 @@
     </div>
 
     <script>
+        // Carousel functionality
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Carousel script loaded');
-            
+            console.log('DOM loaded, starting carousel...');
             const carouselTexts = document.querySelectorAll('.carousel-text');
             const carouselCircles = document.querySelectorAll('.carousel-circle');
-            let currentIndex = 0;
             
+            if (carouselTexts.length === 0) {
+                console.error('No carousel texts found!');
+                return;
+            }
+            
+            let currentIndex = 0;
+
             function showNextText() {
-                console.log('Showing next text, current index:', currentIndex);
-                
-                // Remove active class from current text and circle
+                // Hide current text and circle
                 carouselTexts[currentIndex].classList.remove('active');
                 carouselCircles[currentIndex].classList.remove('active');
                 
-                // Move to next index
+                // Move to next text
                 currentIndex = (currentIndex + 1) % carouselTexts.length;
                 
-                // Add active class to next text and circle
+                // Show next text and circle
                 carouselTexts[currentIndex].classList.add('active');
                 carouselCircles[currentIndex].classList.add('active');
-                
-                console.log('New active index:', currentIndex);
             }
-            
+
             // Start the carousel after a short delay
-            setTimeout(() => {
-                console.log('Starting carousel interval');
+            setTimeout(function() {
+                console.log('Starting carousel interval...');
                 setInterval(showNextText, 6000); // Change every 6 seconds
             }, 1000);
         });
