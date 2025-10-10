@@ -88,13 +88,7 @@
           box-sizing: border-box !important;
         }
 
-        /* Header Section */
-        .header-section {
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-          align-items: center;
-        }
+        /* Simplified Header - no wrapper needed */
 
         .title {
           font-size: 1.4rem;
@@ -109,7 +103,7 @@
           position: relative;
           height: 60px;
           width: 100%;
-          max-width: 1800px;
+          max-width: 2500px;
           margin: 5px auto;
           display: flex;
           align-items: center;
@@ -284,7 +278,7 @@
           
           .carousel-container {
             height: 50px;
-            max-width: 500px;
+            max-width: 800px;
           }
           
           .logo-image-large {
@@ -318,7 +312,7 @@
           
           .carousel-container {
             height: 45px;
-            max-width: 450px;
+            max-width: 700px;
           }
           
           .logo-image-large {
@@ -357,20 +351,18 @@
 
     <div class="container">
         <!-- Header Section -->
-        <div class="header-section">
-            <h1 class="title">Each Monday at 12PM (Est)</h1>
-            
-            <!-- Carousel Container -->
-            <div class="carousel-container">
-                <div class="carousel-text instagram-text active">Commit to a<br>weekly screen time limit<br>with cash on the line</div>
-                <div class="carousel-text instagram-text">Weekly verdict!<br>Profit goes to weekly activism.<br>Commit again!</div>
-            </div>
-            
-            <!-- Carousel Indicators -->
-            <div class="circles-container">
-                <div class="circle carousel-circle filled active"></div>
-                <div class="circle carousel-circle outline"></div>
-            </div>
+        <h1 class="title">Each Monday at 12PM (Est)</h1>
+        
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <div class="carousel-text instagram-text active">Commit to a<br>weekly screen time limit<br>with cash on the line</div>
+            <div class="carousel-text instagram-text">Weekly verdict!<br>Profit goes to weekly activism.<br>Commit again!</div>
+        </div>
+        
+        <!-- Carousel Indicators -->
+        <div class="circles-container">
+            <div class="circle carousel-circle filled active"></div>
+            <div class="circle carousel-circle outline"></div>
         </div>
 
         <!-- Main Logo -->
