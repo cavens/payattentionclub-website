@@ -7,9 +7,16 @@
     <style>
         /* Reset and Base Styles */
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+          margin: 0 !important;
+          padding: 0 !important;
+          box-sizing: border-box !important;
+        }
+        
+        /* Browser-specific fixes */
+        html, body {
+          -webkit-font-smoothing: antialiased !important;
+          -moz-osx-font-smoothing: grayscale !important;
+          text-rendering: optimizeLegibility !important;
         }
 
         html {
@@ -21,16 +28,20 @@
 
         body {
           font-family: 'Helvetica', Arial, sans-serif;
-          background-color: #FF0000 !important;
-          color: #000000;
-          line-height: 1.4;
-          min-height: 100vh;
-          max-height: 100vh;
-          overflow-x: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
+          background-color: #FFFDA7 !important;
+          color: #000000 !important;
+          line-height: 1.4 !important;
+          min-height: 100vh !important;
+          max-height: 100vh !important;
+          overflow-x: hidden !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          position: relative !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
         }
 
         /* Video Background */
@@ -61,18 +72,20 @@
         }
 
         .container {
-          width: 100%;
-          max-width: 2000px;
-          padding: 40px 20px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          position: relative;
-          z-index: 3;
-          gap: 30px;
-          max-height: 100vh;
-          overflow-y: auto;
+          width: 100% !important;
+          max-width: 2000px !important;
+          padding: 40px 20px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+          position: relative !important;
+          z-index: 3 !important;
+          gap: 30px !important;
+          max-height: 100vh !important;
+          overflow-y: auto !important;
+          margin: 0 auto !important;
+          box-sizing: border-box !important;
         }
 
         /* Header Section */
@@ -84,7 +97,7 @@
         }
 
         .title {
-          font-size: 2rem;
+          font-size: 1.6rem;
           font-weight: 400;
           letter-spacing: -0.01em;
           line-height: 1.4;
@@ -170,8 +183,12 @@
         }
 
         .logo-image-large {
-          width: 900px;
-          height: auto;
+          width: 720px !important;
+          height: auto !important;
+          max-width: 720px !important;
+          display: block !important;
+          margin: 0 auto !important;
+          object-fit: contain !important;
         }
 
         /* App Store Section */
@@ -189,14 +206,14 @@
         }
 
         .app-store-button {
-          width: 240px;
+          width: 192px;
           height: auto;
           display: block;
           transition: transform 0.2s ease;
         }
 
         .join-waitlist {
-          font-size: 1.8rem;
+          font-size: 1.44rem;
           font-weight: 400;
           letter-spacing: -0.01em;
           line-height: 1.4;
@@ -220,13 +237,13 @@
         }
 
         .instagram-logo {
-          width: 60px;
+          width: 48px;
           height: auto;
           transition: transform 0.2s ease;
         }
 
         .instagram-text {
-          font-size: 1.8rem;
+          font-size: 1.44rem;
           font-weight: 400;
           letter-spacing: -0.01em;
           line-height: 1.4;
@@ -245,11 +262,11 @@
           }
           
           .logo-image-large {
-            width: 600px;
+            width: 480px;
           }
           
           .app-store-button {
-            width: 200px;
+            width: 160px;
           }
         }
 
@@ -261,7 +278,7 @@
           }
           
           .title {
-            font-size: 1rem;
+            font-size: 0.8rem;
           }
           
           .carousel-container {
@@ -270,19 +287,19 @@
           }
           
           .logo-image-large {
-            width: 400px;
+            width: 320px;
           }
           
           .app-store-button {
-            width: 180px;
+            width: 144px;
           }
           
           .join-waitlist {
-            font-size: 1rem;
+            font-size: 0.8rem;
           }
           
           .instagram-text {
-            font-size: 0.8rem;
+            font-size: 0.64rem;
           }
         }
 
@@ -294,7 +311,7 @@
           }
           
           .title {
-            font-size: 0.9rem;
+            font-size: 0.72rem;
           }
           
           .carousel-container {
@@ -303,23 +320,23 @@
           }
           
           .logo-image-large {
-            width: 300px;
+            width: 240px;
           }
           
           .app-store-button {
-            width: 160px;
+            width: 128px;
           }
           
           .join-waitlist {
-            font-size: 0.9rem;
+            font-size: 0.72rem;
           }
           
           .instagram-text {
-            font-size: 0.75rem;
+            font-size: 0.6rem;
           }
           
           .instagram-logo {
-            width: 35px;
+            width: 28px;
           }
         }
     </style>
