@@ -117,7 +117,7 @@
           transform: translate(-50%, -50%);
           width: 98%;
           opacity: 0;
-          transition: opacity 0.4s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
           margin: 0 !important;
           text-align: center;
           color: #000000;
@@ -396,16 +396,18 @@
             function showNextText() {
                 console.log('Showing next text, current index:', currentIndex);
                 
-                // Remove active class from current text and circle
+                // Fade out current text
                 carouselTexts[currentIndex].classList.remove('active');
                 carouselCircles[currentIndex].classList.remove('active');
                 
                 // Move to next index
                 currentIndex = (currentIndex + 1) % carouselTexts.length;
                 
-                // Add active class to next text and circle
-                carouselTexts[currentIndex].classList.add('active');
-                carouselCircles[currentIndex].classList.add('active');
+                // Fade in next text after a brief delay
+                setTimeout(() => {
+                    carouselTexts[currentIndex].classList.add('active');
+                    carouselCircles[currentIndex].classList.add('active');
+                }, 200); // Small delay to ensure fade out completes first
                 
                 console.log('New active index:', currentIndex);
             }
