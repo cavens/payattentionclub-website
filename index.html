@@ -242,7 +242,7 @@
           letter-spacing: -0.01em;
           line-height: 1.4;
           color: #000000;
-          transition: transform 0.2s ease;
+          transition: transform 0.2s ease, opacity 0.3s ease-in-out;
         }
 
         .dont-text {
@@ -399,6 +399,7 @@
                 // Fade out current text
                 carouselTexts[currentIndex].classList.remove('active');
                 carouselCircles[currentIndex].classList.remove('active');
+                console.log('Fading out text at index:', currentIndex);
                 
                 // Move to next index
                 currentIndex = (currentIndex + 1) % carouselTexts.length;
@@ -407,7 +408,8 @@
                 setTimeout(() => {
                     carouselTexts[currentIndex].classList.add('active');
                     carouselCircles[currentIndex].classList.add('active');
-                }, 200); // Small delay to ensure fade out completes first
+                    console.log('Fading in text at index:', currentIndex);
+                }, 300); // Increased delay to ensure fade out completes first
                 
                 console.log('New active index:', currentIndex);
             }
