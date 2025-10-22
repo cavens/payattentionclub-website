@@ -9,6 +9,9 @@
   },
   "keywords": ["website", "static", "payattentionclub"],
   "author": "cavens",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }
 
