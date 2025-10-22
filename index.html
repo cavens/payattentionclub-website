@@ -659,6 +659,8 @@
             // iPhone Screen Animation
             const iphoneScreens = document.querySelectorAll('.iphone-screen');
             let currentIphoneIndex = 0;
+            let iphoneAnimationStarted = false;
+            let iphoneAnimationInterval;
             
             function showNextIphoneScreen() {
                 iphoneScreens[currentIphoneIndex].classList.remove('active');
@@ -668,7 +670,19 @@
                 iphoneScreens[currentIphoneIndex].classList.add('active');
             }
             
-            setInterval(showNextIphoneScreen, 3000);
+            function startIphoneAnimation() {
+                if (!iphoneAnimationStarted) {
+                    iphoneAnimationStarted = true;
+                    iphoneAnimationInterval = setInterval(showNextIphoneScreen, 3000);
+                }
+            }
+            
+            // Start animation when user scrolls down
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 50) {
+                    startIphoneAnimation();
+                }
+            });
         });
 
         // Smooth Scroll Functions
